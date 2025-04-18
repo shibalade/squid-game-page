@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -65,6 +66,7 @@
     }
   </style>
 </head>
+
 <body>
   <div class="overlay">
     <div class="symbols">⬤ ▲ ⬛</div>
@@ -76,12 +78,24 @@
 
   <script>
     function jouer() {
+      removeButtons();
       document.getElementById('response').innerText = 'Mot de passe : 1,2,3,soleil';
     }
 
     function refuser() {
+      removeButtons();
       document.getElementById('response').innerText = 'Dommage... Il n’y a pas de retour en arrière.';
+    }
+
+    function removeButtons() {
+      const buttons = document.getElementsByTagName('button');
+      if (buttons) {
+        while (buttons[0]) {
+          buttons[0].remove();
+        }
+      }
     }
   </script>
 </body>
+
 </html>
